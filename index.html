@@ -340,7 +340,7 @@
         <div id="site-head-content" class="inner">
 
             <h1 class="blog-title">Arpan Mishra</h1>
-            <h2 class="blog-description">Applied AI Engineer | Data Scientist | Problem Solver</h2>
+            <h2 class="blog-description">Applied AI Engineer | Gen AI &amp; Agentic Systems</h2>
 
             
             <a class='btn site-menu' data-title-anchor='about-me'>About Me</a>
@@ -372,9 +372,9 @@
                 <figure class="about"><img src="images/E40ACB24-B2DA-4241-9701-4BE6A22F6082_1_105_c.jpeg"/>
 </figure>
 
-<p><a href="docs/arpan_mishra_2026.docx.pdf"><i class="fas fa-download "></i></a>  <a href="mailto:mishraarpan6@gmail.com"><i class="fa fa-envelope "></i></a>   <a href="https://www.linkedin.com/in/arpan-mishra-88a589154/"><i class="fab fa-linkedin"></i></a>      <a href="https://github.com/Arpan-Mishra"><i class="fab fa-github"></i></a>  <a href="https://medium.com/@mishraarpan6"><i class="fab fa-medium"></i></a> <a href="https://www.kaggle.com/mishraboi"><i class="fab fa-kaggle"></i></a></p>
+<p><a href="docs/arpan_mishra_resume_5_4_26.docx.pdf"><i class="fas fa-download "></i></a>  <a href="mailto:mishraarpan6@gmail.com"><i class="fa fa-envelope "></i></a>   <a href="https://www.linkedin.com/in/arpan-mishra-88a589154/"><i class="fab fa-linkedin"></i></a>      <a href="https://github.com/Arpan-Mishra"><i class="fab fa-github"></i></a>  <a href="https://medium.com/@mishraarpan6"><i class="fab fa-medium"></i></a> <a href="https://www.kaggle.com/mishraboi"><i class="fab fa-kaggle"></i></a></p>
 <p>Hi there, my name is Arpan Mishra and I currently work as a <strong>Data Science Consultant at <a href="https://www.zs.com/">ZS Associates</a>.</strong> I graduated in July 2021 with a Bachelor of Science in Statistics from <a href="http://kmc.du.ac.in/">KMC, University of Delhi</a>.</p>
-<p>I&rsquo;m an Applied AI Engineer with 4.5 years of experience building production-grade LLM systems in regulated, high-stakes environments. I specialize in translating complex business problems into scalable AI architectures—spanning multi-agent pipelines, RAG-based retrieval, prompt engineering, and evaluation frameworks. I&rsquo;m equally comfortable in deep technical implementation and in communicating architectural decisions to non-technical audiences.</p>
+<p>I&rsquo;m an Applied AI Engineer with ~5 years of experience building production-grade LLM systems in regulated, high-stakes environments. I specialize in translating complex business problems into scalable AI architectures—spanning multi-agent pipelines, RAG-based retrieval, prompt engineering, and evaluation frameworks. I&rsquo;m equally comfortable in deep technical implementation and in communicating architectural decisions to non-technical audiences.</p>
 <p>If I&rsquo;m not building things, I&rsquo;m either at the gym, napping, or losing my mind over FIFA.</p>
 
             </section>
@@ -395,40 +395,34 @@
 </figure>
 
 <strong>Data Science Consultant at <a href="https://www.zs.com/">ZS Associates</a></strong><br>
-December 2025 &ndash; Present | Gurgaon, India</p>
-<p><strong>Clinical Trial Document Authoring Platform</strong></p>
+December 2025 &ndash; Present | New Delhi, India</p>
+<p><strong>Clinical Trial Document Authoring Platform</strong> <em>(Fortune 500 Pharma · MS Word Add-in Copilot)</em></p>
 <ul>
-<li>Built and delivered a $5M enterprise-grade multi-agent document authoring system supporting 12 clinical trial document types for a Fortune 500 client—a production-ready platform that reduced manual drafting time and earned trust from cross-functional clinical and regulatory stakeholders.</li>
-<li>Designed the core agent orchestration layer using a Planner-based framework with RAG-powered context grounding, enabling complex document workflows to execute with improved factual accuracy and compliance with regulatory standards.</li>
-<li>Built scalable digitization and indexing pipelines across AWS and Azure, enabling structured ingestion of diverse clinical document formats—creating a reliable foundation for downstream AI reasoning.</li>
-<li>Developed a centralized knowledge layer as a service (MCP server on AWS Agent Core) and established an LLM evaluation framework, ensuring high-quality, auditable AI outputs in a regulated clinical environment.</li>
+<li><strong>Problem:</strong> Medical writers spent hours synthesising 100+ regulatory documents to produce a first draft — documents reviewed by the FDA where even minor inaccuracies trigger rejection and costly rework. Worked with Medical Writers, Clinical Scientists, PMs, and Solution Architects to build a copilot embedded in MS Word that reduces first-draft time to minutes.</li>
+<li>Built a <strong>multi-mode digitization pipeline</strong>: fine-tuned Detectron2 (pretrained on PubMed) for client-specific document layout detection; enhanced AWS Bedrock Data Automation + Azure Document Intelligence with custom post-processing for tables, headers, and section formatting; built a section-aware chunking strategy and an LLM skeleton parser (Claude Haiku) that reads every page, summarises each section, and constructs a full document hierarchy for semantically rich indexing.</li>
+<li>Identified that users map source sections to target sections, not text chunks — making conventional RAG the wrong model. Designed <strong>agentic section-RAG</strong> with a bookmark extraction tool: agent extracts the full document bookmark hierarchy, selects the top 3 relevant sections per query, and returns them as grounded context — significantly improving retrieval precision for long-form regulatory authoring.</li>
+<li>Designed a <strong>Planner-Executor multi-agent framework</strong> across 12 document types; built a base agent class with LangSmith observability, Portkey for LLM proxy and prompt versioning (managing 100s of prompts and model configs team-wide), and short-term memory. Deployed centralized knowledge as an <strong>MCP server on AWS Agent Core</strong>; established LLM-as-a-judge eval with golden responses and ACS-framework prompts via LangSmith; human validation checkpoints at critical stages for FDA compliance.</li>
 </ul>
 <p><strong>Clinical Query Analysis System</strong></p>
 <ul>
-<li>Designed and deployed a GenAI-powered clinical query intelligence system that reduced redundant queries by 20%, directly improving operational efficiency across clinical workflows.</li>
-<li>Architected a multi-agent LLM framework comprising an Executor Agent, Redundancy Classification Agent, and Query Category Detection Agent—each with well-defined responsibilities for modular iteration and evaluation.</li>
-<li>Processed and benchmarked insights from ~1.3M historical clinical queries, establishing a performance baseline and improving classification accuracy through targeted prompt optimization and model tuning.</li>
-<li>Integrated the system into the live clinical query portal, enabling real-time redundancy detection and query-type tagging at the point of user input.</li>
+<li><strong>Problem:</strong> Clinical teams had no objective framework to assess query quality — query tagging was entirely subjective. A stratified sample analysis revealed <strong>14% redundancy</strong>, significant enough to justify building a systematic classification pipeline.</li>
+<li>Built a <strong>query classification framework</strong> applying three independent classifiers to every query: Query Type (data mismatch, labelling issue, missing information, etc.), Query Quality (actionable vs. non-actionable — based on clarity, presence of next action, and whether a genuine issue was raised vs. user frustration), and Redundancy Detection against a corpus of ~1.3M historical queries using LLM classification combined with statistical analysis.</li>
+<li>Deployed as an AI validation layer on the live clinical query portal — whenever a user raises a query, the system automatically flags redundancy, assigns a quality score, and tags it with a query type in real time.</li>
 </ul>
 <hr>
 <p><figure><img src="images/zs.png#floatleft"/>
 </figure>
 
 <strong>Data Science Associate Consultant at <a href="https://www.zs.com/">ZS Associates</a></strong><br>
-December 2023 &ndash; December 2025 | Gurgaon, India</p>
-<p><strong>Safety Narrative Document Authoring</strong></p>
+December 2023 &ndash; December 2025 | New Delhi, India</p>
+<p><strong>Patient Safety Narrative Authoring</strong></p>
 <ul>
-<li>Developed an AI-powered pipeline to analyze SDTM and ADaM clinical trial datasets and automatically generate chronological safety narratives for patients.</li>
-<li>Engineered an end-to-end ETL pipeline to transform structured clinical datasets into LLM-compatible formats for downstream reasoning and summarization.</li>
-<li>Leveraged structured prompting techniques to enable temporal reasoning over patient safety events and produce coherent, medically aligned summaries.</li>
-<li>Built a lightweight application to operationalize the pipeline, generating safety narratives for 600+ patients across 3 clinical trials.</li>
-<li>Implemented automated Gantt chart visualizations from trial data to assist medical writers in validating event timelines.</li>
+<li><strong>Problem:</strong> Original brief: a drafting copilot for patient safety narratives. Identified the real bottleneck was <strong>validation</strong> — verifying every LLM statement against patient data scattered across disconnected silos. Built an ETL pipeline consolidating adverse event data into a <strong>per-patient fact table</strong> visualised as a Gantt chart of event timelines — giving medical writers a single source of truth for sign-off and grounding the LLM at generation time.</li>
+<li>Designed a 3-step generation pipeline: (1) <strong>Data-to-Facts generation</strong> with code-level validation (dates, medication names, adverse events verified programmatically); (2) <strong>Narrative Refinement</strong> module applying FDA writing guidelines; (3) optional <strong>Augmented narrative generation</strong> for clinician notes and additional documents. CoT, few-shot, and temporal reasoning prompting; scaled to 600+ patients across 3 trials.</li>
 </ul>
 <p><strong>Auto Document Redactor</strong></p>
 <ul>
-<li>Designed and deployed an automated PII redaction pipeline for confidential clinical documents, achieving 98% recall and 90% precision—meeting strict compliance requirements for regulated clinical environments.</li>
-<li>Implemented a hybrid architecture combining rule-based heuristics and an ML-driven spaCy NER pipeline with chain-of-thought prompting, accurately identifying nuanced and context-sensitive PII entities.</li>
-<li>Built evaluation benchmarks and validation workflows to ensure ongoing reliability and compliance, establishing a repeatable testing framework for the team.</li>
+<li><strong>Problem:</strong> Regulated clinical documents required PII redaction before external sharing — errors risked compliance violations in FDA-governed workflows. Designed a <strong>hybrid redaction pipeline</strong>: rule-based heuristics for deterministic patterns + fine-tuned spaCy NER trained on clinical PII + chain-of-thought prompting for context-sensitive entities — achieving <strong>98% recall / 90% precision</strong>. Built evaluation benchmarks for repeatable compliance testing; enabled confident pipeline iteration without regression.</li>
 </ul>
 <hr>
 <p><figure><img src="images/zs.png#floatleft"/>
@@ -438,14 +432,12 @@ December 2023 &ndash; December 2025 | Gurgaon, India</p>
 November 2021 &ndash; December 2023 | New Delhi, India</p>
 <p><strong>ISR Entity Detection Pipeline</strong></p>
 <ul>
-<li>Built an entity and relationship extraction pipeline from clinical protocol documents to support Industry Sponsored Research (ISR) decision-making—turning unstructured text into structured intelligence.</li>
-<li>Extracted key entities (drug, dosage, cycle, endpoints, inclusion/exclusion criteria) using spaCy NER, custom fine-tuned entity recognition models, and XGBoost-based classifiers, enabling structured protocol intelligence at scale.</li>
-<li>Enabled structured protocol intelligence to help stakeholders make data-driven research sponsorship decisions.</li>
+<li><strong>Problem:</strong> Stakeholders needed to make data-driven ISR sponsorship decisions, but relevant information — drug names, dosages, treatment cycles, endpoints, inclusion/exclusion criteria — was buried in unstructured clinical protocol documents. Built an end-to-end <strong>entity extraction pipeline</strong> combining spaCy NER, custom fine-tuned entity recognition models, and XGBoost classifiers to structure protocol intelligence at scale for systematic comparison of ISR proposals.</li>
 </ul>
 <p><strong>Patient Discontinuation Prediction</strong></p>
 <ul>
-<li>Developed an XGBoost-based predictive model to identify patients at risk of therapy discontinuation; engineered features from claims data, patient demographics, and census datasets using RFE and forward/backward elimination.</li>
-<li>Packaged the solution as a reusable internal asset, enabling client-specific model training and feature generation across engagements.</li>
+<li><strong>Problem:</strong> Client needed early identification of patients at risk of therapy discontinuation to enable timely retention interventions.</li>
+<li>Developed an <strong>XGBoost model</strong> with features engineered from claims data, patient demographics, and census datasets; used k-fold cross-validation for robust performance estimation and RFE with forward/backward elimination for feature selection; packaged as a <strong>reusable cross-client asset</strong> enabling client-specific model retraining across ZS engagements.</li>
 </ul>
 <hr>
 <p><figure><img src="images/inria.png#floatleft"/>
@@ -484,17 +476,17 @@ August 2020 &ndash; February 2021 | Remote</p>
                 <h2 class="post-title">Skills</h2>
             </header>
             <section class="post-content">
-                <p><strong>Languages &amp; Tools</strong><br>
-Python, R, SQL, JavaScript, Docker, Streamlit, LangGraph, LangChain</p>
+                <p><strong>Gen AI</strong><br>
+Multi-Agent Orchestration, RAG, Document Digitization and Parsing, MCP Server Design, LangGraph, LangChain, Claude SDK, LangSmith, Portkey, CoT / Few-Shot / Structured Prompting, LLM Evaluation (LLM-as-a-Judge, ACS Framework), State &amp; Memory Management</p>
 
-<p><strong>LLM &amp; Agent Systems</strong><br>
-Multi-Agent Architectures, RAG, Prompt Engineering (Chain-of-Thought, Few-Shot, Structured), Agent Orchestration, Context Engineering, LLM Evaluation &amp; Validation Frameworks, MCP Servers</p>
+<p><strong>Cloud &amp; Infra</strong><br>
+AWS (Bedrock, Bedrock Data Automation, SageMaker, Agent Core, EKS, DocumentDB), Google Cloud (Vertex AI, Gemini API), Azure Document Intelligence, Docker</p>
 
-<p><strong>Cloud &amp; Infrastructure</strong><br>
-AWS (SageMaker, Agent Runtime, Bedrock, EKS, DocumentDB), Azure Document Intelligence, Google Vertex AI</p>
+<p><strong>ML</strong><br>
+NLP, Layout Detection, spaCy NER, HuggingFace, PyTorch, XGBoost</p>
 
-<p><strong>Domains</strong><br>
-Clinical Trials, Healthcare AI, Regulated AI Deployment, Document Intelligence, Safety-Critical Systems</p>
+<p><strong>Languages</strong><br>
+Python (expert), SQL, R, Bash</p>
 
 <table>
 <thead>
@@ -674,7 +666,7 @@ Clinical Trials, Healthcare AI, Regulated AI Deployment, Document Intelligence, 
             <p>A code walkthrough of using the hub package for satellite imagery
             </p>
             <p><button><a
-                        href="https://towardsdatascience.com/faster-machine-learning-using-hub-by-activeloop-4ffb3420c005">Read</a></button>
+                        href="https://medium.com/data-science/faster-machine-learning-using-hub-by-activeloop-4ffb3420c005">Read</a></button>
             </p>
         </div>
     </div>
@@ -687,7 +679,7 @@ Clinical Trials, Healthcare AI, Regulated AI Deployment, Document Intelligence, 
 
             </p>
             <p><button><a
-                        href="https://towardsdatascience.com/lets-make-some-anime-using-deep-learning-d258806954f5">Read</a></button>
+                        href="https://medium.com/data-science/lets-make-some-anime-using-deep-learning-d258806954f5">Read</a></button>
             </p>
         </div>
     </div>
@@ -703,7 +695,7 @@ Clinical Trials, Healthcare AI, Regulated AI Deployment, Document Intelligence, 
             <p>Intuitively understand how Support Vector Machines work
             </p>
             <p><button><a
-                        href="https://towardsdatascience.com/decoding-support-vector-machines-5b81d2f7b76f">Read</a></button>
+                        href="https://medium.com/data-science/decoding-support-vector-machines-5b81d2f7b76f">Read</a></button>
             </p>
         </div>
     </div>
@@ -714,7 +706,7 @@ Clinical Trials, Healthcare AI, Regulated AI Deployment, Document Intelligence, 
 
             <p>Learn to train an SVM model following best practices</p>
             <p><button><a
-                        href="https://towardsdatascience.com/predicting-hr-attrition-using-support-vector-machines-d8b4e82d5351">Read</a></button>
+                        href="https://medium.com/data-science/predicting-hr-attrition-using-support-vector-machines-d8b4e82d5351">Read</a></button>
             </p>
         </div>
     </div>
